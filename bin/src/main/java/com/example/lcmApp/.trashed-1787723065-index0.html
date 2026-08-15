@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Списание материалов</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f6f9; color: #333; line-height: 1.6; padding: 20px; }
+    .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); overflow: hidden; }
+    header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+    h1 { font-size: 1.8rem; margin: 0; }
+
+    #authScreen, #appScreen { padding: 25px; }
+    #authScreen { display: block; }
+    #appScreen { display: none; }
+
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 6px; font-weight: 500; color: #2c3e50; }
+    input, select, button { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+    select:focus, input:focus { outline: none; border-color: #3498db; box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2); }
+
+    .input-group { display: flex; gap: 8px; }
+    .input-group input:first-child { flex: 3; }
+    .input-group span { flex: 1; display: flex; align-items: center; justify-content: center; background: #eee; border: 1px solid #ddd; border-radius: 8px; font-weight: 500; color: #555; }
+
+    button { background: #3498db; color: white; border: none; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+    button:hover { background: #2980b9; }
+    button.danger { background: #e74c3c; }
+    button.danger:hover { background: #c0392b; }
+
+    h3 { color: #2c3e50; margin: 20px 0 10px; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+
+    #cartList { max-height: 300px; overflow-y: auto; border: 1px solid #eee; border-radius: 8px; padding: 10px; background: #fdfdfd; }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8f9fa; margin-bottom: 8px; border-radius: 6px; font-size: 0.95rem; }
+    .cart-item .name { flex: 3; font-weight: 500; color: #2c3e50; }
+    .cart-item .quantity { flex: 1; text-align: center; color: #7f8c8d; }
+    .cart-item button { width: auto; padding: 6px 10px; background: #e74c3c; color: white; font-size: 0.9rem; }
+
+    .empty { text-align: center; color: #95a5a6; font-style: italic; }
+    footer { text-align: center; padding: 15px; background: #ecf0f1; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #bdc3c7; }
+
+    .toast {
+      position: fixed; top: 20px; right: 20px;
+      padding: 14px 20px; border-radius: 6px;
+      font-family: Arial, sans-serif; font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999;
+      max-width: 320px; word-wrap: break-word;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .error { background: #d32f2f; color: white; }
+    .success { background: #2e7d32; color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- Экран входа -->
+  <div id="authScreen" class="container">
+    <header><h1>Вход</h1></header>
+    <div class="content" style="padding:25px;">
+      <div class="form-group">
+        <label for="loginInput">Логин</label>
+        <input type="text" id="loginInput" placeholder="Логин" />
+      </div>
+      <div class="form-group">
+        <label for="passwordInput">Пароль</label>
+        <input type="password" id="passwordInput" placeholder="Пароль" />
+      </div>
+      <button onclick="doLogin()">Войти</button>
+      <p id="authError" style="margin-top:10px; color:#d32f2f;"></p>
+    </div>
+  </div>
+
+  <!-- Основное приложение -->
+  <div id="appScreen" class="container">
+    <header>
+      <h1>Списание материалов</h1>
+      <div style="font-size:0.9rem; opacity:0.8;">Пользователь: <span id="userDisplay"></span></div>
+    </header>
+
+    <div class="content">
+      <div class="form-group" id="selectMaterialItem">
+        <label for="categorySelect">Категория материала</label>
+        <select id="categorySelect"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="materialSelect">Список материала</label>
+        <select id="materialSelect"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="materialSearch">Материал</label>
+        <input type="text" id="materialSearch" placeholder="Введите название материала..." list="materialList"/>
+        <datalist id="materialList">
+          <option value="Акриловая краска NOVOL AK-200">
+          <option value="Лак NOVOL LK-300">
+          <option value="Грунт Standox UP 50">
+          <option value="Шпатлёвка полиэфирная Novol SP-100">
+          <option value="Растворитель 646">
+        </datalist>
+      </div>
+
+      <div class="form-group">
+        <label for="quantityInput">Количество</label>
+        <div class="input-group">
+          <input type="number" id="quantityInput" min="0.1" step="0.1" value="1.0"/>
+          <span>л/кг</span>
+        </div>
+      </div>
+
+      <button onclick="addToCart()">Добавить в корзину</button>
+
+      <h3>Корзина</h3>
+      <div id="cartList">
+        <p class="empty">Корзина пуста</p>
+      </div>
+
+      <button class="danger" style="margin-top: 20px; padding: 14px; font-size: 1.1rem;" onclick="writeOff()">
+        Списать материалы
+      </button>
+    </div>
+
+    <footer>
+      © 2026 Авто-малярная мастерская. Все права защищены.
+    </footer>
+  </div>
+
+  <script>
+    const baseUrl = "http://localhost:8081/lcm";
+    const loginUrl = baseUrl + "/auth/login";
+
+    let cart = [];
+    let authToken = null;
+
+    function showAuthScreen() {
+      document.getElementById('authScreen').style.display = 'block';
+      document.getElementById('appScreen').style.display = 'none';
+      document.getElementById('loginInput').value = '';
+      document.getElementById('passwordInput').value = '';
+      document.getElementById('authError').textContent = '';
+    }
+
+    function showAppScreen(username) {
+      document.getElementById('userDisplay').textContent = username || 'Пользователь';
+      document.getElementById('authScreen').style.display = 'none';
+      document.getElementById('a@ppScreen').style.display = 'block';
+      loadCategoryList();
+    }
+
+    async function apiFetch(url, options = {}) {
+      const headers = { ...options.headers };
+      if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
+      headers['Content-Type'] = 'application/json';
+
+      const res = await fetch(url, { ...options, headers });
+
+      if (res.status === 401) {
+        showToast('Сессия истекла. Войдите снова.', 'error');
+        setTimeout(showAuthScreen, 1500);
+        throw new Error('Unauthorized');
+      }
+
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || `Ошибка ${res.status}`);
+      }
+
+      return res.status === 204 ? null : await res.json();
+    }
+
+    async function doLogin() {
+      const login = document.getElementById('loginInput').value.trim();
+      const password = document.getElementById('passwordInput').value;
+      const errorEl = document.getElementById('authError');
+      errorEl.textContent = '';
+
+      if (!login || !password) {
+        errorEl.textContent = 'Заполните логин и пароль';
+        return;
+      }
+
+      try {
+        const response = await fetch(loginUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: login, password: password })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          authToken = data.token;
+          alert(data.token);
+          showAppScreen(data.user);
+        } else {
+          const text = await response.text();
+          errorEl.textContent = text || 'Ошибка входа';
+        }
+      } catch (e) {
+        console.error(e);
+        errorEl.textContent = 'Нет соединения с сервером';
+      }
+    }
+
+    document.getElementById('categorySelect').addEventListener('change', loadMaterialList);
+
+    async function loadCategoryList() {
+      const categorySelect = document.getElementById("categorySelect");
+      categorySelect.innerHTML = '<option>Загрузка категорий...</option>';
+      try {
+        const categories = await apiFetch(baseUrl + '/category');
+        categorySelect.innerHTML = '';
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Выберите категорию...';
+        categorySelect.appendChild(defaultOption);
+
+        categories.forEach(category => {
+          const option = document.createElement('option');
+          option.value = category.id;
+          option.textContent = category.name;
+          categorySelect.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Ошибка загрузки категорий:', error);
+        categorySelect.innerHTML = '<option>Не удалось загрузить</option>';
+        showToast('Не удалось загрузить категории', 'error');
+      }
+    }
+
+    async function getMaterialByCategory(category) {
+      return await apiFetch(`${baseUrl}/materials?type=${encodeURIComponent(category)}`);
+    }
+
+    async function loadMaterialList(event) {
+      const selectMaterialItem = document.getElementById('materialSelect');
+            if (!selectedOption || selectedCategory.value === '') {
+        selectMaterialItem.innerHTML = '';
+        return;
+      }
+
+      try {
+        const materialList = await getMaterialByCategory(selectedOption.text.trim());
+        selectMaterialItem.innerHTML = '';
+
+        if (materialList.length === 0) {
+          selectMaterialItem.innerHTML = '<option>Материал отсутствует</option>';
+          return;
+        }
+
+        for (let item of materialList) {
+          const materialItem = document.createElement('option');
+          materialItem.value = item.id;
+          materialItem.textContent = item.name;
+          selectMaterialItem.appendChild(materialItem);
+        }
+      } catch (e) {
+        console.error(e);
+        selectMaterialItem.innerHTML = '<option>Ошибка загрузки</option>';
+      }
+    }
+
+    function addToCart() {
+      const materialName = document.getElementById('materialSearch').value.trim();
+      const quantityInput = document.getElementById('quantityInput');
+      const quantity = parseFloat(quantityInput.value);
+
+      if (!materialName) {
+        showToast('Введите название материала', 'error');
+        return;
+      }
+      if (isNaN(quantity) || quantity <= 0) {
+        showToast('Введите корректное количество', 'error');
+        return;
+      }
+
+      cart.push({ name: materialName, quantity });
+      updateCart();
+
+      document.getElementById('materialSearch').value = '';
+      quantityInput.value = '1.0';
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cartList');
+      if (cart.length === 0) {
+        cartList.innerHTML = '<p class="empty">Корзина пуста</p>';
+        return;
+      }
+
+      cartList.innerHTML = '';
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <span class="name">${escapeHtml(item.name)}</span>
+          <span class="quantity">${item.quantity} л/кг</span>
+          <button onclick="removeFromCart(${index})">Удалить</button>
+        `;
+        cartList.appendChild(div);
+      });
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    async function writeOff() {
+      if (cart.length === 0) {
+        showToast('Корзина пуста. Добавьте материалы.', 'error');
+        return;
+      }
+      if (!confirm(`Списать ${cart.length} позиций?`)) return;
+
+      try {
+        await apiFetch(baseUrl + '/write-off', {
+          method: 'POST',
+          body: JSON.stringify(cart)
+        });
+        showToast('Успешно списано!', 'success');
+        cart = [];
+        updateCart();
+      } catch (error) {
+        console.error('Ошибка списания:', error);
+        showToast('Ошибка при списании', 'error');
+      }
+    }
+
+    function showToast(text, type) {
+      const existing = document.querySelector('.toast');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.textContent = text;
+      toast.className = type === 'success' ? 'success' : 'error';
+      toast.classList.add('toast');
+      document.body.appendChild(toast);
+
+      requestAnimationFrame(() => toast.style.opacity = '1');
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 500);
+      }, 3000);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+  </script>
+</body>
+</html>

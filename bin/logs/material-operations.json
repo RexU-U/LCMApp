@@ -73,31 +73,3 @@
 {"operation":"ADDED","material":"Лейка","quantity":5.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.994811846Z"}
 {"operation":"ADDED","material":"Антисиликон","quantity":4.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:05.000639074Z"}
 {"operation":"ADDED","material":"Круги P180","quantity":34.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:05.006403106Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T19:57:00.227805504Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T19:57:01.346600216Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T19:57:01.917386720Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T19:57:02.906428122Z"}
-{"operation":"ISSUE","material":"Круги P120","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T19:57:02.912547976Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T19:57:03.174003399Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T19:57:04.600455510Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:27:19.240591940Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:27:20.722781895Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:27:21.562264034Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:27:22.653564295Z"}
-{"operation":"ISSUE","material":"Круги P120","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:27:22.658913706Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:27:22.842770341Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:27:24.510877867Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:36:17.048316837Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:36:18.528290691Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:36:19.167947513Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:36:20.204129768Z"}
-{"operation":"ISSUE","material":"Круги P120","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:36:20.209425448Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:36:20.430064078Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:36:22.142290395Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:41:22.027645372Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:41:23.173465070Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:41:23.612892679Z"}
-{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:41:24.373853910Z"}
-{"operation":"ISSUE","material":"Круги P120","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:41:24.379753415Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:41:24.534422977Z"}
-{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-15T20:41:25.490486586Z"}

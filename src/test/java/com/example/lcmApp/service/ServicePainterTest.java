@@ -255,7 +255,7 @@ class ServicePainterTest {
         
         assertThatThrownBy(() -> servicePainter.deductMaterials(List.of(dto)))
             .isInstanceOf(InsufficientStockException.class)
-            .hasMessageContaining("Insufficient stock");
+            .hasMessageContaining("Не достаточно материала на складе: Круги P80. имееться: 100.0, требуеться: 200.0");
     }
 
     @Test
