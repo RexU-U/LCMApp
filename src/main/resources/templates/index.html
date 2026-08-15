@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Списание материалов</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; }
+        header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+        h1 { font-size: 1.8rem; margin: 0; }
+        .content { padding: 25px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 6px; font-weight: 500; color: #2c3e50; }
+        input, select, button { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .input-group { display: flex; gap: 8px; }
+        .input-group input:first-child { flex: 3; }
+        .input-group span { flex: 1; display: flex; align-items: center; justify-content: center; background: #eee; border: 1px solid #ddd; border-radius: 8px; font-weight: 500; color: #555; }
+        button { background: #3498db; color: white; border: none; cursor: pointer; font-weight: 600; transition: background 0.3s; }
+        button:hover { background: #2980b9; }
+        button.danger { background: #e74c3c; }
+        button.danger:hover { background: #c0392b; }
+        button.logout { background: #95a5a6; margin-top: 10px; }
+        button.logout:hover { background: #7f8c8d; }
+        button:disabled { opacity: 0.7; cursor: not-allowed; }
+        h3 { color: #2c3e50; margin: 20px 0 10px; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        #cartList { max-height: 300px; overflow-y: auto; border: 1px solid #eee; border-radius: 8px; padding: 10px; background: #fdfdfd; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8f9fa; margin-bottom: 8px; border-radius: 6px; font-size: 0.95rem; }
+        .cart-item .name { flex: 3; font-weight: 500; color: #2c3e50; }
+        .cart-item .quantity { flex: 1; text-align: center; color: #7f8c8d; }
+        .cart-item button { width: auto; padding: 6px 10px; background: #e74c3c; color: white; font-size: 0.9rem; }
+        .empty { text-align: center; color: #95a5a6; font-style: italic; }
+        footer { text-align: center; padding: 15px; background: #ecf0f1; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #bdc3c7; }
+        .toast { position: fixed; top: 20px; right: 20px; padding: 14px 20px; border-radius: 6px; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; max-width: 320px; word-wrap: break-word; opacity: 0; transition: opacity 0.3s ease; }
+        .toast.error { background: #d32f2f; color: white; }
+        .toast.success { background: #2e7d32; color: white; }
+        .auth-link { display: inline-block; margin-top: 10px; color: #3498db; cursor: pointer; text-decoration: underline; }
+        #authScreen, #appScreen { display: none; }
+        .user-info { display: flex; justify-content: space-between; align-items: center; padding: 0 25px 10px; }
+        .loading { opacity: 0.6; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+
+<!-- ===== Блок входа / регистрации ===== -->
+<div id="authScreen" class="container">
+    <header><h1>Вход / Регистрация</h1></header>
+    <div class="content">
+        <div id="loginForm">
+            <div class="form-group">
+                <label for="loginInput">Логин</label>
+                <input type="text" id="loginInput" placeholder="Логин" />
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Пароль</label>
+                <input type="password" id="passwordInput" placeholder="Пароль" />
+            </div>
+            <button onclick="doLogin()" id="btnLogin">Войти</button>
+            <p id="authError" style="color:#d32f2f; margin-top:10px;"></p>
+            <span class="auth-link" onclick="showRegisterForm()">Нет аккаунта? Зарегистрироваться</span>
+        </div>
+        <div id="registerForm" style="display:none;">
+            <div class="form-group">
+                <label>Логин</label>
+                <input type="text" id="regLogin" placeholder="Логин" />
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="regPassword" placeholder="Пароль" />
+            </div> 
+            <button onclick="doRegister()" id="btnRegister">Зарегистрироваться</button>
+            <p id="regError" style="color:#d32f2f; margin-top:10px;"></p>
+            <span class="auth-link" onclick="showLoginForm()">Уже есть аккаунт? Войти</span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== Основное приложение ===== -->
+<div id="appScreen" class="container">
+    <header>
+        <h1>LCMApp</h1>
+    </header>
+    <div class="user-info">
+        <span>Пользователь: <strong id="usernameDisplay" sec:authentication="name">Гость</strong>
+        </span>
+        <button class="logout" onclick="logout()" style="width:auto; padding:6px 15px;">Выйти</button>
+    </div>
+    <div class="content">
+        <!-- Категории (заполняются Thymeleaf) -->
+        <div class="form-group">
+            <label for="categorySelect">Категория материала</label>
+            <select id="categorySelect">
+                <option value="">Выберите категорию...</option>
+                <option th:each="cat : ${categories}" th:value="${cat}" th:text="${cat}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="materialSelect">Список материала</label>
+            <select id="materialSelect"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="materialSearch">Материал</label>
+            <input type="text" id="materialSearch" placeholder="Введите название материала..." list="materialList"/>
+            <datalist id="materialList">
+                <option th:each="m : ${materials}" th:value="${m.name}"></option>
+            </datalist>
+        </div>
+
+        <div class="form-group">
+            <label for="quantityInput">Количество</label>
+            <div class="input-group">
+                <input type="number" id="quantityInput" min="0.1" step="0.1" value="1.0"/>
+                <span id="unit">л/кг</span>
+            </div>
+        </div>
+
+        <button onclick="addToCart()">Добавить в корзину</button>
+
+        <h3>Корзина</h3>
+        <div id="cartList"><p class="empty">Корзина пуста</p></div>
+
+        <button class="danger" style="margin-top: 20px; padding: 14px; font-size: 1.1rem;" onclick="writeOff()" id="btnWriteOff">
+            Списать материалы
+        </button>
+    </div>
+    <footer>© 2026 Авто-малярная мастерская. Все права защищены.</footer>
+</div>
+
+<script>
+    // ============================================================
+    //  КОНФИГУРАЦИЯ
+    // ============================================================
+    const baseUrl = "http://localhost:8081";
+    const loginUrl = baseUrl + "/auth/login";
+    const registerUrl = baseUrl + "/auth/register";
+    const apiBase = baseUrl + "/lcm";
+
+    let cart = [];
+    let authToken = null;
+    let allMaterials = [];
+
+    // ============================================================
+    //  РАБОТА С ТОКЕНОМ
+    // ============================================================
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    function getToken() {
+        const tokenFromCookie = getCookie('JWT_TOKEN');
+        if (tokenFromCookie) return tokenFromCookie;
+        return localStorage.getItem('authToken') || null;
+    }
+
+    function setToken(token) {
+        localStorage.setItem('authToken', token);
+        authToken = token;
+    }
+
+    function clearToken() {
+        localStorage.removeItem('authToken');
+        authToken = null;
+    }
+
+    // ============================================================
+    //  ЗАЩИЩЁННЫЙ ЗАПРОС
+    // ============================================================
+    async function apiFetch(url, options = {}) {
+        const token = getToken();
+        const headers = {
+            'Content-Type': 'application/json',
+            ...options.headers
+        };
+        if (token) {
+            headers['Authorization'] = 'Bearer ' + token;
+        }
+        
+        const response = await fetch(url, { 
+            ...options, 
+            headers, 
+            credentials: 'include'
+        });
+
+        if (response.status === 401) {
+            clearToken();
+            showAuthScreen();
+            showToast('Сессия истекла. Войдите заново.', 'error');
+            throw new Error('Сессия истекла');
+        }
+        return response;
+    }
+
+    // ============================================================
+    //  УПРАВЛЕНИЕ ЭКРАНАМИ
+    // ============================================================
+    function showAppScreen(username) {
+        document.getElementById('authScreen').style.display = 'none';
+        document.getElementById('appScreen').style.display = 'block';
+        
+        if (username) {
+            document.getElementById('usernameDisplay').textContent = username;
+        }
+        
+        loadMaterialDataset();
+    }
+
+    function showAuthScreen() {
+        document.getElementById('authScreen').style.display = 'block';
+        document.getElementById('appScreen').style.display = 'none';
+        document.getElementById('loginInput').value = '';
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('authError').textContent = '';
+    }
+
+    function logout() {
+        clearToken();
+        cart = [];
+        updateCart();
+        showAuthScreen();
+        showToast('Вы вышли из системы', 'success');
+    }
+
+    // ============================================================
+    //  АУТЕНТИФИКАЦИЯ
+    // ============================================================
+    function handleAuthResponse(data) {
+        setToken(data.token);
+        
+        const username = data.username || 'Пользователь';
+        document.getElementById('usernameDisplay').textContent = username;
+        
+        if (data.role === 'ROLE_ADMIN') {
+            window.location.href = '/admin';
+        } else {
+            showAppScreen(username);
+            showToast('Добро пожаловать, ' + username + '!', 'success');
+        }
+    }
+
+    async function doLogin() {
+        const btn = document.getElementById('btnLogin');
+        const login = document.getElementById('loginInput').value.trim();
+        const password = document.getElementById('passwordInput').value;
+        const errorEl = document.getElementById('authError');
+        errorEl.textContent = '';
+
+        if (!login || !password) {
+            errorEl.textContent = 'Заполните логин и пароль';
+            return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Вход...';
+
+        try {
+            const resp = await fetch(loginUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ username: login, password })
+            });
+
+            if (resp.ok) {
+                const data = await resp.json();
+                handleAuthResponse(data);
+            } else {
+                let messageError = await resp.json();
+                showToast('Ошибка входа: ' + messageError.message, 'error');
+            }
+        } catch (e) {
+            errorEl.textContent = 'Нет соединения с сервером';
+            showToast('Ошибка соединения с сервером', 'error');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Войти';
+        }
+    }
+
+    async function doRegister() {
+        const btn = document.getElementById('btnRegister');
+        const login = document.getElementById('regLogin').value.trim();
+        const password = document.getElementById('regPassword').value;
+        const errorEl = document.getElementById('regError');
+        errorEl.textContent = '';
+
+        if (!login || !password) {
+            errorEl.textContent = 'Заполните все поля';
+            return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Регистрация...';
+        try {
+            const resp = await fetch(registerUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ username: login, password })
+            });
+
+            if (resp.ok) {
+                const data = await resp.json();
+                handleAuthResponse(data);
+            } else {
+                let text = await resp.text();
+                if (!text) text = 'Ошибка регистрации (без сообщения)';
+                errorEl.textContent = text;
+                showToast('Ошибка регистрации: ' + text, 'error');
+            }
+        } catch (e) {
+            errorEl.textContent = 'Нет соединения с сервером';
+            showToast('Ошибка соединения с сервером', 'error');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Зарегистрироваться';
+        }
+    }
+
+    function showRegisterForm() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registerForm').style.display = 'block';
+    }
+
+    function showLoginForm() {
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('registerForm').style.display = 'none';
+    }
+
+    // ============================================================
+    //  РАБОТА С МАТЕРИАЛАМИ
+    // ============================================================
+    async function loadMaterialDataset() {
+        try {
+            const res = await apiFetch(apiBase + '/all');
+            if (res.ok) {
+                allMaterials = await res.json();
+                populateDatalist(allMaterials);
+            } else {
+                console.warn('Не удалось загрузить материалы');
+            }
+        } catch (e) {
+            console.error('Ошибка загрузки материалов:', e.message);
+        }
+    }
+
+    function populateDatalist(materials) {
+        const datalist = document.getElementById('materialList');
+        if (!datalist) return;
+        datalist.innerHTML = '';
+        materials.forEach(m => {
+            const opt = document.createElement('option');
+            opt.value = m.name;
+            datalist.appendChild(opt);
+        });
+    }
+
+    async function loadMaterialList(event) {
+        const category = event.target.value;
+        const select = document.getElementById('materialSelect');
+        select.innerHTML = '';
+
+        if (!category) {
+            document.getElementById('materialSearch').value = '';
+            document.getElementById('unit').textContent = 'л/кг';
+            document.getElementById('quantityInput').value = '1.0';
+            return;
+        }
+
+        try {
+            const res = await apiFetch(apiBase + `/materials?type=${encodeURIComponent(category)}`);
+            if (!res.ok) throw new Error('Ошибка загрузки материалов категории');
+            const materials = await res.json();
+
+            if (materials.length === 0) {
+                select.innerHTML = '<option>Материал отсутствует</option>';
+                return;
+            }
+
+            materials.forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m.name;
+                opt.dataset.unit = m.unit || 'шт';
+                opt.dataset.id = m.material_id;
+                opt.textContent = m.name;
+                select.appendChild(opt);
+            });
+
+            // Подставляем первый материал
+            const first = materials[0];
+            document.getElementById('materialSearch').value = first.name;
+            document.getElementById('unit').textContent = first.unit || 'шт';
+            document.getElementById('quantityInput').value = '1.0';
+        } catch (e) {
+            select.innerHTML = '<option>Ошибка загрузки</option>';
+            console.error(e.message);
+            showToast('Ошибка загрузки материалов: ' + e.message, 'error');
+        }
+    }
+
+    function selectItemMaterialList(event) {
+        const target = event.target;
+        let option;
+        
+        if (target.tagName === 'SELECT') {
+            option = target.options[target.selectedIndex];
+        } else {
+            // Для input с datalist
+            const list = document.getElementById(target.list);
+            if (list) {
+                option = Array.from(list.options).find(opt => opt.value === target.value);
+            }
+        }
+
+        if (!option) return;
+
+        document.getElementById('materialSearch').value = option.value;
+        document.getElementById('unit').textContent = option.dataset.unit || 'шт';
+        document.getElementById('quantityInput').value = '1.0';
+    }
+
+    // ============================================================
+    //  ПОИСК МАТЕРИАЛА ПО ИМЕНИ (возвращает ID)
+    // ============================================================
+    function findMaterialByName(name) {
+        return allMaterials.find(m => m.name === name);
+    }
+
+    // ============================================================
+    //  КОРЗИНА
+    // ============================================================
+    function addToCart() {
+        const name = document.getElementById('materialSearch').value.trim();
+        const qtyInput = document.getElementById('quantityInput');
+        const unit = document.getElementById('unit').textContent;
+        
+        if (!name) {
+            showToast('Введите название материала', 'error');
+            return;
+        }
+        
+        const qty = parseFloat(qtyInput.value);
+        if (isNaN(qty) || qty <= 0) {
+            showToast('Введите корректное количество', 'error');
+            return;
+        }
+
+        // Проверяем, существует ли материал
+        const material = findMaterialByName(name);
+        if (!material) {
+            showToast('Материал "' + name + '" не найден в базе', 'error');
+            return;
+        }
+
+        // Добавляем в корзину с ID
+        cart.push({ 
+            id: Number(material.material_id),
+            name, 
+            volume: qty, 
+            unit 
+        });
+        
+        updateCart();
+        showToast(`"${name}" добавлен в корзину`, 'success');
+    }
+
+    function updateCart() {
+        const list = document.getElementById('cartList');
+        if (cart.length === 0) {
+            list.innerHTML = '<p class="empty">Корзина пуста</p>';
+            return;
+        }
+        list.innerHTML = '';
+        cart.forEach((item, idx) => {
+            const div = document.createElement('div');
+            div.className = 'cart-item';
+            div.innerHTML = `
+                <span class="name">${escapeHtml(item.name)}</span>
+                <span class="quantity">${item.volume} ${escapeHtml(item.unit)}</span>
+                <button onclick="removeFromCart(${idx})">Удалить</button>
+            `;
+            list.appendChild(div);
+        });
+    }
+
+    function removeFromCart(idx) {
+        cart.splice(idx, 1);
+        updateCart();
+    }
+
+    // ============================================================
+    //  СПИСАНИЕ МАТЕРИАЛОВ
+    // ============================================================
+    async function writeOff() {
+        const btn = document.getElementById('btnWriteOff');
+        if (cart.length === 0) {
+            showToast('Корзина пуста', 'error');
+            return;
+        }
+        
+        // Проверяем наличие всех материалов
+        for (const item of cart) {
+            const material = findMaterialByName(item.name);
+            if (!material) {
+                showToast(`Материал "${item.name}" не найден в базе`, 'error');
+                return;
+            }
+            // Обновляем ID, если он изменился
+            item.id = Number(material.material_id);
+        }
+
+        if (!confirm(`Списать ${cart.length} позиций?`)) return;
+
+        btn.disabled = true;
+        btn.textContent = 'Списание...';
+
+        try {
+            // Подготавливаем данные для отправки
+            const itemsToSend = cart.map(item => ({
+                id: item.id,
+                name: item.name,
+                unit: item.unit,
+                volume: item.volume
+            }));
+
+            const res = await apiFetch(apiBase + '/materials/update', {
+                method: 'POST',
+                body: JSON.stringify(itemsToSend)
+            });
+            
+            if (res.ok) {
+                showToast('Успешно списано!', 'success');
+                cart = [];
+                updateCart();
+                // Обновляем список материалов
+                await loadMaterialDataset();
+            } else {
+                let errorText = await res.json();
+                throw new Error(errorText.message);
+            }
+        } catch (e) {
+            showToast('Ошибка при списании: ' + e.message, 'error');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Списать материалы';
+        }
+    }
+
+    // ============================================================
+    //  ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+    // ============================================================
+    function showToast(text, type) {
+        const existing = document.querySelector('.toast');
+        if (existing) existing.remove();
+        const toast = document.createElement('div');
+        toast.textContent = text;
+        toast.className = type === 'success' ? 'toast success' : 'toast error';
+        document.body.appendChild(toast);
+        requestAnimationFrame(() => toast.style.opacity = '1');
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 500);
+        }, 3000);
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    // ============================================================
+    //  ИНИЦИАЛИЗАЦИЯ
+    // ============================================================
+    window.addEventListener('DOMContentLoaded', function() {
+        // Регистрируем слушатели
+        const categorySelect = document.getElementById('categorySelect');
+        const materialSelect = document.getElementById('materialSelect');
+        const materialSearch = document.getElementById('materialSearch');
+
+        if (categorySelect) {
+            categorySelect.addEventListener('change', loadMaterialList);
+        }
+        if (materialSelect) {
+            materialSelect.addEventListener('change', selectItemMaterialList);
+        }
+        if (materialSearch) {
+            materialSearch.addEventListener('input', function() {
+                // При ручном вводе обновляем unit
+                const name = this.value.trim();
+                const material = findMaterialByName(name);
+                if (material) {
+                    document.getElementById('unit').textContent = material.unit || 'шт';
+                }
+            });
+        }
+
+        // Проверяем токен
+        const token = getToken();
+        if (token) {
+            authToken = token;
+            fetch(apiBase + '/all', {
+                headers: { 'Authorization': 'Bearer ' + token },
+                credentials: 'include'
+            })
+            .then(res => {
+                if (res.ok) {
+                    return res.json().then(data => {
+                        allMaterials = data;
+                        populateDatalist(data);
+                        showAppScreen();
+                    });
+                } else {
+                    clearToken();
+                    showAuthScreen();
+                }
+            })
+            .catch(() => {
+                clearToken();
+                showAuthScreen();
+            });
+        } else {
+            showAuthScreen();
+        }
+    });
+
+</script>
+</body>
+</html>

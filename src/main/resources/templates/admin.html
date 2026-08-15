@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Админ LCM: остатки, смета, логи, маляры</title>
+  
+  
+  <style>
+    :root { --primary: #2563eb; --danger: #dc2626; --success: #16a34a; --bg: #f3f4f6; --border: #e5e7eb; --white: #ffffff; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 12px; background: var(--bg); color: #111; }
+    .container { max-width: 1200px; margin: auto; }
+    h1, h2, h3 { margin: 0 0 12px 0; }
+    .card { background: var(--white); padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+    th { background: #f9fafb; }
+    .btn { padding: 6px 12px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; color: #fff; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+    .btn-primary { background: var(--primary); }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-danger { background: var(--danger); }
+    .btn-danger:hover { background: #b91c1c; }
+    .btn-success { background: var(--success); }
+    .btn-success:hover { background: #15803d; }
+    .btn-sm { padding: 4px 8px; font-size: 13px; }
+    .btn-secondary { background: #6c757d; }
+    .btn-secondary:hover { background: #5a6268; }
+    input, select { padding: 8px; border: 1px solid var(--border); border-radius: 6px; width: 100%; box-sizing: border-box; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    .hidden { display: none; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tab-btn { padding: 8px 16px; border: 1px solid var(--border); background: var(--white); border-radius: 6px; cursor: pointer; color: #374151; }
+    .tab-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .tab-panel { display: none; animation: fadeIn 0.2s; }
+    .tab-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+    .col { flex: 1; min-width: 220px; }
+    .loading-state { text-align: center; padding: 24px; color: #666; font-style: italic; }
+    .error-state { text-align: center; padding: 24px; color: #d32f2f; background: #ffebee; border: 1px solid #ef9a9a; border-radius: 8px; }
+
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    }
+    .header-bar h1 { margin: 0; font-size: 1.5rem; }
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 9999;
+      max-width: 320px;
+      word-wrap: break-word;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .toast.error { background: #d32f2f; color: white; }
+    .toast.success { background: #2e7d32; color: white; }
+
+    .confirm-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      animation: fadeInOverlay 0.3s ease;
+    }
+    @keyframes fadeInOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .confirm-modal {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .confirm-modal h3 { margin: 0 0 10px 0; color: #2c3e50; }
+    .confirm-modal p { margin: 0 0 20px 0; color: #555; line-height: 1.5; }
+    .confirm-actions { display: flex; gap: 10px; justify-content: flex-end; }
+    .confirm-actions .btn { padding: 8px 20px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header-bar">
+      <h1>Админ-панель</h1>
+      <div class="header-actions">
+        <button class="btn btn-danger" onclick="logout()">Выйти</button>
+        <button class="btn btn-danger" onclick="closeAdmin()">Перейти в LcmApp</button>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="stock">Остатки материалов</button>
+      <button class="tab-btn" data-tab="estimate">Смета (заказ)</button>
+      <button class="tab-btn" data-tab="logs">Логи списаний</button>
+      <button class="tab-btn" data-tab="painters">Маляры</button>
+    </div>
+
+    <div id="tab-stock" class="tab-panel active card">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <input id="searchStock" type="text" placeholder="Поиск материала..." style="max-width:300px;">
+        <button id="btnAddMaterial" class="btn btn-primary">+ Добавить материал</button>
+      </div>
+      <table style="margin-top:12px;">
+        <thead>
+          <tr>
+            <th>ID</th><th>Материал</th><th>Ед.</th><th>Остаток</th>
+            <th>Категория</th><th>Описание</th><th>Приоритет на закупку</th>
+            <th style="width:140px;">Действия</th>
+          </tr>
+        </thead>
+        <tbody id="stockTableBody"></tbody>
+      </table>
+    </div>
+
+    <div id="tab-estimate" class="tab-panel card">
+      <h2>Смета / заказ на закупку</h2>
+      <p>Выберите материалы и укажите количество к заказу.</p>
+      <div class="row" style="margin-bottom:12px;">
+        <div class="col">
+          <label>Материал</label>
+          <select id="estimateMaterial" onchange="updateEstimateUnit()">
+            <option value=""> выберите </option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Ед. изм.</label>
+          <input id="estimateUnit" readonly style="background:#f9fafb;" />
+        </div>
+        <div class="col" style="max-width:200px;">
+          <label>Кол-во</label>
+          <input id="estimateQty" type="number" min="1" value="1" />
+        </div>
+        <button class="btn btn-success" onclick="addToEstimate()">+ В смету</button>
+      </div>
+      <table>
+        <thead><tr><th>Материал</th><th>Ед.</th><th>Кол-во</th><th></th></tr></thead>
+        <tbody id="estimateTableBody"></tbody>
+      </table>
+      <div style="margin-top:20px;">
+        <button class="btn btn-primary" onclick="generateEstimateDoc()">Сформировать документ pdf</button>
+        <button class="btn btn-primary" onclick="addToStock()">Добавить на склад</button>
+        <button class="btn btn-success" style="margin-left:8px;" onclick="exportEstimateCsv()">Экспорт CSV</button>
+       </div>
+    </div>
+
+    <div id="tab-logs" class="tab-panel card">
+      <h2>Логи списаний</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Тип</th>
+            <th>Материал</th>
+            <th>Кол-во</th>
+            <th>Ед.</th>
+            <th>Пользователь</th>
+            <th>Время</th>
+          </tr>
+        </thead>
+        <tbody id="logsTableBody"></tbody>
+      </table>
+      <button id="deleteLogs" class="btn btn-danger" style="margin-top:12px;">Удалить логи</button>
+      <button id="exportLogs" class="btn btn-success" style="margin-top:12px;">Экспорт логов (CSV)</button>
+    </div>
+
+    <div id="tab-painters" class="tab-panel card">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
+        <div style="flex:1; min-width:220px;">
+          <label>ФИО маляра</label>
+          <input id="painterName" placeholder="Иванов И.И." />
+        </div>
+        <div style="min-width:160px;">
+          <label>Роль</label>
+          <select id="painterRole">
+            <option value="PAINTER">Маляр</option>
+            <option value="MASTER">Мастер приемщик</option>
+          </select>
+        </div>
+        <button id="btnSavePainter" class="btn btn-primary">Изменить</button>
+      </div>
+      <table style="margin-top:12px;">
+        <thead><tr><th>ФИО</th><th>Роль</th><th>Действия</th></tr></thead>
+        <tbody id="paintersTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal для добавления/редактирования материала -->
+  <div id="materialModal" class="card hidden" style="position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:480px; z-index:1000; max-width:90vw;">
+    <h3 id="modalTitle">Добавить материал</h3>
+    <form id="materialForm">
+      <input id="materialId" type="hidden" />
+      <div class="grid-2">
+        <div><label>Название</label><input id="materialName" required oninvalid="this.setCustomValidity('Поле Название обязательно для заполнения')"
+  oninput="this.setCustomValidity('')" /></div>
+        <div>
+          <label>Ед. изм.</label>
+          <select id="materialUnit">
+            <option value="шт">шт</option><option value="кг">кг</option><option value="л">л</option><option value="м">м</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:12px;"><label>Остаток</label><input id="materialQuantity" type="number" min="0" required oninvalid="this.setCustomValidity('Поле Остаток обязательно для заполнения')"
+  oninput="this.setCustomValidity('')" /></div>
+      <div style="margin-top:12px;"><label>Минимальное колличество</label><input id="materialInventory" required oninvalid="this.setCustomValidity('Поле Минимальное колличество обязательно для заполнения')"
+  oninput="this.setCustomValidity('')" /></div>
+      <div style="margin-top:12px;"><label>Категория</label><input id="materialCategory" required oninvalid="this.setCustomValidity('Поле Категория обязательно для заполнения')"
+  oninput="this.setCustomValidity('')"/></div>
+      <div style="margin-top:12px;"><label>Описание</label><input id="materialDescription" /></div>
+      <div style="margin-top:12px;"><label>Приоритет на закупку</label><input id="materialPriority" type="number" min="0" step="0.01" required oninvalid="this.setCustomValidity('Поле Приоритет на закупку обязательно для заполнения')"
+  oninput="this.setCustomValidity('')" /></div>
+      <div style="margin-top:20px; display:flex; gap:10px; justify-content:flex-end;">
+        <button type="button" id="closeModal" class="btn btn-secondary">Отмена</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // ============================================================
+    //  ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ
+    // ============================================================
+
+    let materials = [];
+    let estimateItems = [];
+    let editingPainterId = null;
+
+    const JAVASCRIPT_TOKEN = /*[[${jwtToken}]]*/ null;
+    const API_BASE = 'http://localhost:8081/lcm';
+
+    // ============================================================
+    //  ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+    // ============================================================
+
+    function showToast(text, type) {
+      const existing = document.querySelector('.toast');
+      if (existing) existing.remove();
+      const toast = document.createElement('div');
+      toast.textContent = text;
+      toast.className = type === 'success' ? 'success' : 'error';
+      toast.classList.add('toast');
+      document.body.appendChild(toast);
+      requestAnimationFrame(() => toast.style.opacity = '1');
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 500);
+      }, 3000);
+    }
+
+    function showConfirm(message, onConfirm, onCancel) {
+      const overlay = document.createElement('div');
+      overlay.className = 'confirm-overlay';
+      
+      const modal = document.createElement('div');
+      modal.className = 'confirm-modal';
+      modal.innerHTML = `
+        <h3>Подтверждение</h3>
+        <p>${escapeHtml(message)}</p>
+        <div class="confirm-actions">
+          <button class="btn btn-secondary" id="confirmCancel">Отмена</button>
+          <button class="btn btn-danger" id="confirmOk">Да, удалить</button>
+        </div>
+      `;
+      
+      overlay.appendChild(modal);
+      document.body.appendChild(overlay);
+      
+      const closeModal = () => {
+        overlay.remove();
+      };
+      
+      document.getElementById('confirmCancel').addEventListener('click', () => {
+        closeModal();
+        if (onCancel) onCancel();
+      });
+      
+      document.getElementById('confirmOk').addEventListener('click', () => {
+        closeModal();
+        if (onConfirm) onConfirm();
+      });
+      
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          closeModal();
+          if (onCancel) onCancel();
+        }
+      });
+      
+      const escHandler = (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+          document.removeEventListener('keydown', escHandler);
+          if (onCancel) onCancel();
+        }
+      };
+      document.addEventListener('keydown', escHandler);
+    }
+
+    function getToken() {
+      if (JAVASCRIPT_TOKEN) return JAVASCRIPT_TOKEN;
+      return localStorage.getItem('authToken');
+    }
+
+    function authHeaders() {
+      const headers = { 'Content-Type': 'application/json' };
+      const token = getToken();
+      if (token) {
+        headers['Authorization'] = 'Bearer ' + token;
+      }
+      return headers;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function setLoading(selector, isLoading) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      if (isLoading) {
+        el.innerHTML = '<tr><td colspan="8" class="loading-state">Загрузка...</td></tr>';
+      } else {
+        const loadingRow = el.querySelector('.loading-state');
+        if (loadingRow) loadingRow.remove();
+      }
+    }
+
+    function setError(selector, message) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      el.innerHTML = `<tr><td colspan="8" class="error-state">${escapeHtml(message)}</td></tr>`;
+    }
+
+    function logout() {
+      showConfirm(
+        'Вы уверены, что хотите выйти?',
+        function() {
+          localStorage.removeItem('authToken');
+          window.location.href = '/';
+        }
+      );
+    }
+
+    // ============================================================
+    //  ТАБЫ
+    // ============================================================
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ============================================================
+    //  МАТЕРИАЛЫ
+    // ============================================================
+
+    async function loadMaterials() {
+      setLoading('#stockTableBody', true);
+      try {
+        const res = await fetch(API_BASE + '/all', { headers: authHeaders(), credentials: 'include' });
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error('HTTP ' + res.status + (text ? ': ' + text : ''));
+        }
+        materials = await res.json();
+        renderStockTable(materials);
+        populateEstimateSelect(materials);
+      } catch (e) {
+        console.error('loadMaterials error:', e);
+        setError('#stockTableBody', e.message);
+        showToast('Ошибка загрузки материалов', 'error');
+      } finally {
+        setLoading('#stockTableBody', false);
+      }
+    }
+
+    function renderStockTable(data) {
+      const tbody = document.querySelector('#stockTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      if (!Array.isArray(data) || data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" class="loading-state">Нет материалов</td></tr>';
+        return;
+      }
+      data.forEach(m => {
+        const tr = document.createElement('tr');
+        const materialId = m.material_id;
+        tr.innerHTML = `
+          <td>${materialId}</td>
+          <td>${escapeHtml(m.name)}</td>
+          <td>${escapeHtml(m.unit)}</td>
+          <td>${m.volume || 0}</td>
+          <td>${escapeHtml(m.type)}</td>
+          <td>${escapeHtml(m.description || '')}</td>
+          <td>${m.priority || 0}</td>
+          <td style="text-align:right;">
+            <button class="btn btn-primary btn-sm" onclick="editMaterial(${materialId})">Изменить</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteMaterial(${materialId})">Удалить</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function populateEstimateSelect(data) {
+      const sel = document.getElementById('estimateMaterial');
+      if (!sel) return;
+      sel.innerHTML = '<option value="">-- выберите --</option>';
+      data.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = Number(m.material_id);
+        opt.dataset.unit = m.unit;
+        opt.textContent = m.name + ' (' + m.unit + ')';
+        sel.appendChild(opt);
+      });
+    }
+
+    // ============================================================
+    //  ДОБАВЛЕНИЕ/РЕДАКТИРОВАНИЕ МАТЕРИАЛА
+    // ============================================================
+
+    document.getElementById('btnAddMaterial').addEventListener('click', function() {
+      document.getElementById('materialForm').reset();
+      document.getElementById('materialId').value = '';
+      document.getElementById('modalTitle').textContent = 'Добавить материал';
+      document.getElementById('materialModal').classList.remove('hidden');
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('materialModal').classList.add('hidden');
+    });
+
+    document.getElementById('materialForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const id = document.getElementById('materialId').value;
+      const payload = {
+        material_id: id ? Number(id) : null,
+        name: document.getElementById('materialName').value.trim(),
+        unit: document.getElementById('materialUnit').value,
+        volume: parseFloat(document.getElementById('materialQuantity').value),
+        type: document.getElementById('materialCategory').value.trim(),
+        description: document.getElementById('materialDescription').value.trim(),
+        inventory: parseFloat(document.getElementById('materialInventory').value),
+        priority: parseFloat(document.getElementById('materialPriority').value)
+      };
+
+      if (!payload.name || isNaN(payload.volume) || !payload.type || isNaN(payload.priority)) {
+        showToast('Заполните все обязательные поля', 'error');
+        return;
+      }
+
+      try {
+        const url = API_BASE + '/material/insert';
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: authHeaders(),
+          credentials: 'include',
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          document.getElementById('materialModal').classList.add('hidden');
+          await loadMaterials();
+          showToast('Материал сохранён', 'success');
+        } else {
+          const text = await res.text();
+          throw new Error(text || 'Ошибка сохранения');
+        }
+      } catch (e) {
+        console.error(e.message);
+        showToast('Ошибка материал не сохранен', 'error');
+      }
+    });
+
+    function editMaterial(id) {
+      const numericId = Number(id);
+      const material = materials.find(m => Number(m.material_id) === numericId);
+      if (!material) {
+        showToast('Материал не найден', 'error');
+        return;
+      }
+      document.getElementById('materialId').value = Number(material.material_id);
+      document.getElementById('materialName').value = material.name;
+      document.getElementById('materialUnit').value = material.unit;
+      document.getElementById('materialQuantity').value = material.volume || 0.0;
+      document.getElementById('materialInventory').value = material.inventory || 0.0;
+      document.getElementById('materialCategory').value = material.type;
+      document.getElementById('materialDescription').value = material.description || '';
+      document.getElementById('materialPriority').value = material.priority || 0;
+      document.getElementById('modalTitle').textContent = 'Изменить материал';
+      document.getElementById('materialModal').classList.remove('hidden');
+    }
+
+    async function deleteMaterial(id) {
+      const numericId = Number(id);
+      const material = materials.find(m => Number(m.material_id) === numericId);
+      if (!material) {
+        showToast('Материал не найден', 'error');
+        return;
+      }
+      
+      showConfirm(
+        `Удалить материал "${escapeHtml(material.name)}"?`,
+        async function() {
+          try {
+            const res = await fetch(API_BASE + '/material/delete?name=' + encodeURIComponent(material.name), {
+              method: 'DELETE',
+              headers: authHeaders(),
+              credentials: 'include'
+            });
+            if (res.ok) {
+              await loadMaterials();
+              showToast('Материал удалён', 'success');
+            } else {
+              const text = await res.text();
+              throw new Error(text || 'Ошибка удаления');
+            }
+          } catch (e) {
+            console.error(e);
+            showToast('Ошибка не удалось удалить материал', 'error');
+          }
+        }
+      );
+    }
+
+    // ============================================================
+    //  СМЕТА
+    // ============================================================
+
+    function updateEstimateUnit() {
+      const sel = document.getElementById('estimateMaterial');
+      const opt = sel.options[sel.selectedIndex];
+      document.getElementById('estimateUnit').value = opt ? opt.dataset.unit : '';
+    }
+
+    function addToEstimate() {
+      const sel = document.getElementById('estimateMaterial');
+      const qtyInput = document.getElementById('estimateQty');
+      if (!sel.value) {
+        showToast('Выберите материал', 'error');
+        return;
+      }
+      const qty = parseFloat(qtyInput.value);
+      if (isNaN(qty) || qty <= 0) {
+        showToast('Количество должно быть больше 0', 'error');
+        return;
+      }
+      const opt = sel.options[sel.selectedIndex];
+      const item = {
+        id: Number(sel.value),
+        name: opt.text.split('(')[0].trim(),
+        unit: opt.dataset.unit,
+        volume: qty
+      };
+      const exist = estimateItems.find(i => Number(i.id) === item.id);
+      if (exist) exist.volume += qty;
+      else estimateItems.push(item);
+      renderEstimateTable();
+      qtyInput.value = '1';
+      showToast('Добавлено в смету', 'success');
+    }
+
+    function renderEstimateTable() {
+      const tbody = document.querySelector('#estimateTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      if (estimateItems.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" class="loading-state">Смета пуста</td></tr>';
+        return;
+      }
+      estimateItems.forEach((item, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHtml(item.name)}</td>
+          <td>${escapeHtml(item.unit)}</td>
+          <td>
+            <input type="number" value="${item.volume}" min="1" style="width:80px;"
+              onchange="estimateItems[${idx}].volume = parseFloat(this.value); renderEstimateTable();">
+          </td>
+          <td style="text-align:right;">
+            <button class="btn btn-danger btn-sm" onclick="estimateItems.splice(${idx},1); renderEstimateTable();">Удалить</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function addToStock() {
+      if (estimateItems.length === 0) {
+        showToast('Смета пуста, добавьте материалы', 'error');
+        return;
+      }
+      
+      const itemsToSend = estimateItems.map(item => ({
+        id: Number(item.id),
+        name: item.name,
+        unit: item.unit,
+        volume: Number(item.volume)
+      }));
+      
+      try {
+        const res = await fetch(API_BASE + '/material/addMaterials', { 
+          method: 'POST',
+          headers: authHeaders(), 
+          credentials: 'include', 
+          body: JSON.stringify(itemsToSend)
+        });
+        if (!res.ok) {
+          const errorMessage = await res.text();
+          throw new Error(errorMessage);
+        }
+        showToast('Материалы добавлены на склад', 'success');
+        estimateItems = [];
+        renderEstimateTable();
+        loadMaterials();
+      } catch (e) {
+        console.error(e);
+        showToast('Ошибка при добавлении материала на склад', 'error');
+      }
+    }
+
+    async function generateEstimateDoc() {
+        
+        const itemsToSend = estimateItems.map(item => ({
+        id: Number(item.id),
+        name: item.name,
+        unit: item.unit,
+        volume: Number(item.volume)
+      }));
+      
+      if(itemsToSend === null) {
+          showToast('Материал для сметы отсутствует', 'error');
+      }
+        
+            const res = await fetch(API_BASE + '/report/materials', {
+                method: 'POST', 
+                headers: authHeaders(),
+                credentials: 'include', 
+                body: JSON.stringify(itemsToSend)
+                    
+            });
+            
+            if(res.ok) {
+                
+                const data = await res.blob();
+                
+                let filename = 'report.pdf';
+                
+                const url = URL.createObjectURL(data);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }
+            
+            else {
+                const text = await res.text();
+                console.error(text);
+                showToast('Не удалось загрузить файл лога', "error");
+            }
+    }
+
+    function exportEstimateCsv() {
+      if (estimateItems.length === 0) {
+        showToast('Смета пуста', 'error');
+        return;
+      }
+      let csv = 'Материал,Ед.,Кол-во\n';
+      estimateItems.forEach(i => {
+        csv += `${i.name.replace(/,/g, ';')},${i.unit},${i.volume}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'estimate.csv';
+      a.click();
+      showToast('CSV экспортирован', 'success');
+    }
+
+    // ============================================================
+    //  ЛОГИ
+    // ============================================================
+
+    async function loadLogs() {
+      setLoading('#logsTableBody', true);
+      try {
+        const res = await fetch(API_BASE + '/logs/all', { headers: authHeaders(), credentials: 'include' });
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error('HTTP ' + res.status + (text ? ': ' + text : ''));
+        }
+        const logs = await res.json();
+        renderLogsTable(logs);
+      } catch (e) {
+        console.error('loadLogs error:', e.message);
+        showToast('Ошибка загрузки логов', 'error');
+      } finally {
+        setLoading('#logsTableBody', false);
+      }
+    }
+
+    function renderLogsTable(data) {
+      const tbody = document.querySelector('#logsTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      if (!Array.isArray(data) || data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="loading-state">Нет записей</td></tr>';
+        return;
+      }
+      data.slice(0, 500).forEach(log => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${escapeHtml(log.operation || '-')}</td>
+          <td>${escapeHtml(log.material || '-')}</td>
+          <td>${log.quantity !== undefined && log.quantity !== null ? log.quantity : '-'}</td>
+          <td>${escapeHtml(log.unit || '-')}</td>
+          <td>${escapeHtml(log.user || '-')}</td>
+          <td>${escapeHtml(log.timestamp || '')}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('exportLogs').addEventListener('click', async function() {
+      try {
+        const res = await fetch(API_BASE + '/logs/all', { headers: authHeaders(), credentials: 'include' });
+        if (!res.ok) throw new Error('Ошибка загрузки логов');
+        const logs = await res.json();
+        if (!logs || logs.length === 0) {
+          showToast('Нет логов для экспорта', 'error');
+          return;
+        }
+
+        let csv = 'Операция,Материал,Кол-во,Ед.,Пользователь,Время\n';
+        logs.forEach(l => {
+          csv += `"${(l.operation||'').replace(/"/g,'""')}",`;
+          csv += `"${(l.material||'').replace(/"/g,'""')}",`;
+          csv += `${l.quantity !== undefined && l.quantity !== null ? l.quantity : ''},`;
+          csv += `"${(l.unit||'').replace(/"/g,'""')}",`;
+          csv += `"${(l.user||'').replace(/"/g,'""')}",`;
+          csv += `"${(l.timestamp||'').replace(/"/g,'""')}"\n`;
+        });
+
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'logs.csv';
+        a.click();
+        showToast('Логи экспортированы', 'success');
+      } catch (e) {
+        showToast('Ошибка экспорта документа csv', 'error');
+        console.error(e.message);
+      }
+    });
+
+    document.getElementById('deleteLogs').addEventListener('click', async function() {
+      showConfirm(
+        'Удалить все логи?',
+        async function() {
+          try {
+            const res = await fetch(API_BASE + '/logs/all', { 
+              method: 'DELETE', 
+              headers: authHeaders(), 
+              credentials: 'include'
+            });
+            if (!res.ok) {
+              const errorMessage = await res.text();
+              throw new Error('Ошибка удаления логов: ' + errorMessage);
+            }
+            showToast('Логи удалены', 'success');
+            await loadLogs();
+          } catch (e) {
+            console.error(e);
+            showToast('Ошибка загрузки логов', 'error');
+          }
+        }
+      );
+    });
+
+    // ============================================================
+    //  МАЛЯРЫ
+    // ============================================================
+
+    async function loadPainters() {
+      setLoading('#paintersTableBody', true);
+      try {
+        const res = await fetch(API_BASE + '/painters', { headers: authHeaders(), credentials: 'include' });
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error('HTTP ' + res.status + (text ? ': ' + text : ''));
+        }
+        const painters = await res.json();
+        renderPaintersTable(painters);
+      } catch (e) {
+        console.error('loadPainters error:', e);
+        setError('#paintersTableBody', e.message);
+        showToast('Ошибка загрузки списка маляров', 'error');
+      } finally {
+        setLoading('#paintersTableBody', false);
+      }
+    }
+
+    function renderPaintersTable(data) {
+      const tbody = document.querySelector('#paintersTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      if (!Array.isArray(data) || data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3" class="loading-state">Маляров нет</td></tr>';
+        return;
+      }
+      data.forEach(p => {
+        let role = 'Маляр';
+        if (p.roles && Array.isArray(p.roles) && p.roles.length > 0) {
+          role = (p.roles[0].name === 'USER') ? 'Маляр' : 'Мастер';
+        }
+        const tr = document.createElement('tr');
+        const painterId = p.id;
+        tr.innerHTML = `
+          <td>${escapeHtml(p.fullName || '')}</td>
+          <td>${escapeHtml(role)}</td>
+          <td style="text-align:right;">
+            <button class="btn btn-primary btn-sm" onclick="editPainter(${painterId})">Изменить</button>
+            <button class="btn btn-danger btn-sm" onclick="deletePainter(${painterId})">Удалить</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('btnSavePainter').addEventListener('click', async function() {
+      const name = document.getElementById('painterName').value.trim();
+      const roleSelect = document.getElementById('painterRole');
+      const roleValue = roleSelect.value === 'MASTER' ? 'ADMIN' : 'USER';
+
+      if (!name) {
+        showToast('Введите ФИО', 'error');
+        return;
+      }
+
+      const payload = {
+        fullName: name,
+        roles: [roleValue]
+      };
+
+      if (editingPainterId) {
+        payload.id = Number(editingPainterId);
+      }
+      else {
+          showToast ('Сотрудник не выбран из списка', 'error');
+          return;
+      }
+
+      try {
+        const res = await fetch(API_BASE + '/painter', {
+          method: 'POST',
+          headers: authHeaders(),
+          credentials: 'include',
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          document.getElementById('painterName').value = '';
+          editingPainterId = null;
+          document.getElementById('btnSavePainter').textContent = 'Сохранить';
+          await loadPainters();
+          showToast('Маляр сохранён', 'success');
+        } else {
+          const text = await res.text();
+          throw new Error(text || 'Ошибка сохранения маляра');
+        }
+      } catch (e) {
+        console.error(e);
+        showToast('Ошибка при сохранении данных маляра', 'error');
+      }
+    });
+
+    function editPainter(id) {
+      const numericId = Number(id);
+      fetch(API_BASE + '/painter/' + numericId, { 
+        headers: authHeaders(), 
+        credentials: 'include' 
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Ошибка загрузки');
+        return res.json();
+      })
+      .then(painter => {
+        document.getElementById('painterName').value = painter.fullName || '';
+        const firstRole = (painter.roles && painter.roles.length > 0) ? painter.roles[0].name : 'PAINTER';
+        document.getElementById('painterRole').value = firstRole === 'ADMIN' ? 'MASTER' : 'PAINTER';
+        editingPainterId = painter.id;
+        document.getElementById('btnSavePainter').textContent = 'Обновить';
+        showToast('Режим редактирования маляра', 'success');
+      })
+      .catch(e => {
+        console.error(e);
+        showToast('Ошибка загрузки маляра', 'error');
+      });
+    }
+
+    function deletePainter(id) {
+      const numericId = Number(id);
+      showConfirm(
+        'Удалить маляра?',
+        function() {
+          fetch(API_BASE + '/painter/' + numericId, {
+            method: 'DELETE',
+            headers: authHeaders(),
+            credentials: 'include'
+          })
+          .then(res => {
+            if (res.ok) {
+              loadPainters();
+              showToast('Маляр удалён', 'success');
+            } else {
+              throw new Error('Ошибка удаления');
+            }
+          })
+          .catch(e => {
+            showToast('Ошибка', 'error');
+            console.error(e.message);
+          });
+        }
+      );
+    }
+    
+    async function loadEstimate(){
+        
+        const res = await fetch(API_BASE + '/material/estimate');
+        
+        if(res.ok) {
+            estimateItems = await res.json();
+            renderEstimateTable();
+        }
+        else {
+            const text = await res.text();
+            throw new Error(' Ошибка загрузки сметы');
+        }
+        
+    }
+    
+    function closeAdmin() {
+        window.location.href = "/";
+    }
+
+    // ============================================================
+    //  ИНИЦИАЛИЗАЦИЯ
+    // ============================================================
+
+    async function initAdmin() {
+      const token = getToken();
+      if (!token) {
+        console.warn('Токен отсутствует, перенаправление на главную');
+        window.location.href = '/';
+        return;
+      }
+
+      try {
+        await Promise.all([
+          loadMaterials(),
+          loadLogs(),
+          loadPainters(), 
+          loadEstimate()
+        ]);
+      } catch (e) {
+        console.error('Критическая ошибка:', e);
+        showToast('Критическая ошибка при загрузке данных', 'error');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initAdmin);
+  </script>
+</body>
+</html>

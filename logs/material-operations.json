@@ -1,0 +1,75 @@
+{"operation":"ADDED","material":"Круги P500","quantity":60.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.016394708Z"}
+{"operation":"ADDED","material":"Круги P1000","quantity":30.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.047244031Z"}
+{"operation":"ADDED","material":"Круги P1500","quantity":25.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.063528510Z"}
+{"operation":"ADDED","material":"Круги P2000","quantity":20.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.085129344Z"}
+{"operation":"ADDED","material":"Круги P6000","quantity":10.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.109202052Z"}
+{"operation":"ADDED","material":"Антисиликон","quantity":5.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.128699500Z"}
+{"operation":"ADDED","material":"Растворитель 646","quantity":30.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.137889292Z"}
+{"operation":"ADDED","material":"Спирт","quantity":10.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.152991427Z"}
+{"operation":"ADDED","material":"Грунт мокрый по мокрому серый","quantity":15.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.170811010Z"}
+{"operation":"ADDED","material":"Грунт мокрый по мокрому чёрный","quantity":10.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.186759708Z"}
+{"operation":"ADDED","material":"Грунт акриловый серый","quantity":20.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.202491427Z"}
+{"operation":"ADDED","material":"Грунт акриловый чёрный","quantity":15.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.215146479Z"}
+{"operation":"ADDED","material":"Лак в баллоне","quantity":50.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.224158094Z"}
+{"operation":"ADDED","material":"Добавка для пластика","quantity":8.0,"unit":"л","user":"admin","timestamp":"2026-07-29T06:02:12.245208042Z"}
+{"operation":"ADDED","material":"Паста полировальная","quantity":3.0,"unit":"кг","user":"admin","timestamp":"2026-07-29T06:02:12.266976167Z"}
+{"operation":"ADDED","material":"Антиголограммная паста","quantity":2.0,"unit":"кг","user":"admin","timestamp":"2026-07-29T06:02:12.282755750Z"}
+{"operation":"ADDED","material":"Губка MicroFine","quantity":10.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.302902677Z"}
+{"operation":"ADDED","material":"Шпатлёвка Soft","quantity":8.0,"unit":"кг","user":"admin","timestamp":"2026-07-29T06:02:12.315987364Z"}
+{"operation":"ADDED","material":"Шпатлёвка волокнистая","quantity":6.0,"unit":"кг","user":"admin","timestamp":"2026-07-29T06:02:12.323075489Z"}
+{"operation":"ADDED","material":"Маскировочная бумага","quantity":20.0,"unit":"рул","user":"admin","timestamp":"2026-07-29T06:02:12.329515021Z"}
+{"operation":"ADDED","material":"Маскировочная плёнка","quantity":5.0,"unit":"рул","user":"admin","timestamp":"2026-07-29T06:02:12.342246583Z"}
+{"operation":"ADDED","material":"Скотч 50х50","quantity":30.0,"unit":"рул","user":"admin","timestamp":"2026-07-29T06:02:12.350912833Z"}
+{"operation":"ADDED","material":"Валик поролоновый","quantity":3.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.366666062Z"}
+{"operation":"ADDED","material":"Перчатки резиновые","quantity":20.0,"unit":"пара","user":"admin","timestamp":"2026-07-29T06:02:12.381319396Z"}
+{"operation":"ADDED","material":"Лейка","quantity":5.0,"unit":"шт","user":"admin","timestamp":"2026-07-29T06:02:12.398245437Z"}
+{"operation":"ISSUE","material":"Губка MicroFine","quantity":1.0,"unit":"шт","user":"admin","timestamp":"2026-07-30T06:29:02.636337694Z"}
+{"operation":"ISSUE","material":"Губка MicroFine","quantity":1.0,"unit":"шт","user":"admin","timestamp":"2026-07-30T06:32:46.400751983Z"}
+{"operation":"ISSUE","material":"Паста полировальная","quantity":1.0,"unit":"кг","user":"newuser","timestamp":"2026-07-30T10:23:34.510484739Z"}
+{"operation":"ISSUE","material":"Круги P400","quantity":1.0,"unit":"шт","user":"user","timestamp":"2026-07-31T04:40:55.133910093Z"}
+{"operation":"ADDED","material":"Тест кеша 2","quantity":50.0,"unit":"шт","user":"testuser","timestamp":"2026-07-31T09:42:24.862650681Z"}
+{"operation":"ADDED","material":"Тест кеша 2","quantity":50.0,"unit":"шт","user":"testuser","timestamp":"2026-07-31T09:43:31.351613885Z"}
+{"operation":"ADDED","material":"Тест кеша 2","quantity":50.0,"unit":"шт","user":"testuser","timestamp":"2026-08-01T05:35:44.621480853Z"}
+{"operation":"ADDED","material":"Тест кеша 2","quantity":50.0,"unit":"шт","user":"testuser","timestamp":"2026-08-01T17:23:49.554844087Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-10T03:56:04.014779808Z"}
+{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-10T03:56:05.459811763Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-10T03:56:06.096642321Z"}
+{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-10T03:56:07.051881378Z"}
+{"operation":"ISSUE","material":"Круги P120","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-10T03:56:07.057409901Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-10T03:56:07.293166990Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-10T03:56:08.364601701Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-12T18:31:56.871608105Z"}
+{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-12T18:31:58.850599622Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-12T18:31:59.660551783Z"}
+{"operation":"ISSUE","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-12T18:32:00.688269827Z"}
+{"operation":"ISSUE","material":"Круги P120","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-12T18:32:00.697535350Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":5.0,"unit":"шт","user":"testuser","timestamp":"2026-08-12T18:32:01.005862724Z"}
+{"operation":"ADDED","material":"Круги P80","quantity":10.0,"unit":"шт","user":"testuser","timestamp":"2026-08-12T18:32:02.805801625Z"}
+{"operation":"ISSUE","material":"Антисиликон","quantity":1.0,"unit":"л","user":"Рома","timestamp":"2026-08-15T15:05:51.382724032Z"}
+{"operation":"ISSUE","material":"Обезжириватель","quantity":5.0,"unit":"л","user":"Рома","timestamp":"2026-08-15T15:42:06.968013706Z"}
+{"operation":"ADDED","material":"Круги P500","quantity":60.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.803554573Z"}
+{"operation":"ADDED","material":"Круги P1000","quantity":30.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.818227606Z"}
+{"operation":"ADDED","material":"Круги P1500","quantity":25.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.826610439Z"}
+{"operation":"ADDED","material":"Круги P2000","quantity":20.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.835242241Z"}
+{"operation":"ADDED","material":"Круги P6000","quantity":10.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.841853699Z"}
+{"operation":"ADDED","material":"Растворитель 646","quantity":30.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:04.848837493Z"}
+{"operation":"ADDED","material":"Спирт","quantity":10.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:04.855910950Z"}
+{"operation":"ADDED","material":"Грунт мокрый по мокрому серый","quantity":15.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:04.864007578Z"}
+{"operation":"ADDED","material":"Грунт мокрый по мокрому чёрный","quantity":10.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:04.892818099Z"}
+{"operation":"ADDED","material":"Грунт акриловый серый","quantity":20.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:04.904058924Z"}
+{"operation":"ADDED","material":"Грунт акриловый чёрный","quantity":15.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:04.911036776Z"}
+{"operation":"ADDED","material":"Лак в баллоне","quantity":50.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.918969383Z"}
+{"operation":"ADDED","material":"Добавка для пластика","quantity":8.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:04.925211012Z"}
+{"operation":"ADDED","material":"Паста полировальная","quantity":3.0,"unit":"кг","user":"Андрей","timestamp":"2026-08-15T16:21:04.931549159Z"}
+{"operation":"ADDED","material":"Антиголограммная паста","quantity":2.0,"unit":"кг","user":"Андрей","timestamp":"2026-08-15T16:21:04.937645360Z"}
+{"operation":"ADDED","material":"Губка MicroFine","quantity":10.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.944091776Z"}
+{"operation":"ADDED","material":"Шпатлёвка Soft","quantity":8.0,"unit":"кг","user":"Андрей","timestamp":"2026-08-15T16:21:04.951848920Z"}
+{"operation":"ADDED","material":"Шпатлёвка волокнистая","quantity":6.0,"unit":"кг","user":"Андрей","timestamp":"2026-08-15T16:21:04.957799975Z"}
+{"operation":"ADDED","material":"Маскировочная бумага","quantity":20.0,"unit":"рул","user":"Андрей","timestamp":"2026-08-15T16:21:04.963817092Z"}
+{"operation":"ADDED","material":"Маскировочная плёнка","quantity":5.0,"unit":"рул","user":"Андрей","timestamp":"2026-08-15T16:21:04.969613303Z"}
+{"operation":"ADDED","material":"Скотч 50х50","quantity":30.0,"unit":"рул","user":"Андрей","timestamp":"2026-08-15T16:21:04.975809309Z"}
+{"operation":"ADDED","material":"Валик поролоновый","quantity":3.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.982909375Z"}
+{"operation":"ADDED","material":"Перчатки резиновые","quantity":20.0,"unit":"пара","user":"Андрей","timestamp":"2026-08-15T16:21:04.988730822Z"}
+{"operation":"ADDED","material":"Лейка","quantity":5.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:04.994811846Z"}
+{"operation":"ADDED","material":"Антисиликон","quantity":4.0,"unit":"л","user":"Андрей","timestamp":"2026-08-15T16:21:05.000639074Z"}
+{"operation":"ADDED","material":"Круги P180","quantity":34.0,"unit":"шт","user":"Андрей","timestamp":"2026-08-15T16:21:05.006403106Z"}

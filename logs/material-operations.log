@@ -1,0 +1,895 @@
+2026-08-15 18:03:30 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 5267 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 18:03:30 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 18:03:30 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 18:03:30 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 4 JPA repository interfaces.
+2026-08-15 18:03:31 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 18:03:31 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 18:03:31 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 18:03:31 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 18:03:31 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1445 ms
+2026-08-15 18:03:31 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 18:03:31 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 18:03:31 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 18:03:32 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 18:03:32 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 18:03:32 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ab2ba47
+2026-08-15 18:03:32 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 18:03:32 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 18:03:33 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 18:03:33 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 18:03:33 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 18:03:34 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 18:03:34 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 18:03:34 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 18:03:34 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 18:03:35 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@158774d3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37905236, org.springframework.security.web.context.SecurityContextHolderFilter@5f83b506, org.springframework.security.web.header.HeaderWriterFilter@58182d7, org.springframework.web.filter.CorsFilter@4fdb338e, org.springframework.security.web.authentication.logout.LogoutFilter@4dcdc172, com.example.lcmApp.security.UserAuthFilter@7e2f16bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1377af49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ae06c93, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2de22e7, org.springframework.security.web.session.SessionManagementFilter@7ddf7e77, org.springframework.security.web.access.ExceptionTranslationFilter@53251e03, org.springframework.security.web.access.intercept.AuthorizationFilter@5f3fa154]
+2026-08-15 18:03:35 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 18:03:35 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.614 seconds (process running for 6.024)
+2026-08-15 18:04:01 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 18:04:01 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 18:04:01 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-08-15 18:04:01 - WARN  [http-nio-8081-exec-1] c.e.lcmApp.security.UserAuthFilter - JWT token expired: JWT expired 234747969 milliseconds ago at 2026-08-12T21:51:34.000Z. Current time: 2026-08-15T15:04:01.969Z. Allowed clock skew: 0 milliseconds.
+2026-08-15 18:04:02 - WARN  [http-nio-8081-exec-2] c.e.lcmApp.security.UserAuthFilter - JWT token expired: JWT expired 234748628 milliseconds ago at 2026-08-12T21:51:34.000Z. Current time: 2026-08-15T15:04:02.628Z. Allowed clock skew: 0 milliseconds.
+2026-08-15 18:04:20 - WARN  [http-nio-8081-exec-3] c.e.lcmApp.security.UserAuthFilter - JWT token expired: JWT expired 234766693 milliseconds ago at 2026-08-12T21:51:34.000Z. Current time: 2026-08-15T15:04:20.693Z. Allowed clock skew: 0 milliseconds.
+2026-08-15 18:04:20 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: admin
+2026-08-15 18:04:20 - WARN  [http-nio-8081-exec-3] c.e.l.e.GlobalExceptionHandler - Ошибка аутентификации: Неверные учетные данные пользователя
+2026-08-15 18:04:29 - WARN  [http-nio-8081-exec-4] c.e.lcmApp.security.UserAuthFilter - JWT token expired: JWT expired 234775370 milliseconds ago at 2026-08-12T21:51:34.000Z. Current time: 2026-08-15T15:04:29.370Z. Allowed clock skew: 0 milliseconds.
+2026-08-15 18:04:29 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: admin
+2026-08-15 18:04:29 - WARN  [http-nio-8081-exec-4] c.e.l.e.GlobalExceptionHandler - Ошибка аутентификации: Неверные учетные данные пользователя
+2026-08-15 18:04:39 - WARN  [http-nio-8081-exec-5] c.e.lcmApp.security.UserAuthFilter - JWT token expired: JWT expired 234785476 milliseconds ago at 2026-08-12T21:51:34.000Z. Current time: 2026-08-15T15:04:39.476Z. Allowed clock skew: 0 milliseconds.
+2026-08-15 18:04:39 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: admin
+2026-08-15 18:04:39 - WARN  [http-nio-8081-exec-5] c.e.l.e.GlobalExceptionHandler - Ошибка аутентификации: Неверные учетные данные пользователя
+2026-08-15 18:05:01 - WARN  [http-nio-8081-exec-6] c.e.lcmApp.security.UserAuthFilter - JWT token expired: JWT expired 234807699 milliseconds ago at 2026-08-12T21:51:34.000Z. Current time: 2026-08-15T15:05:01.699Z. Allowed clock skew: 0 milliseconds.
+2026-08-15 18:05:01 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:05:01 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:05:01 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:05:01 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:05:01 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:05:01 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:05:20 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:05:20 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:05:20 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:05:51 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:05:51 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:05:51 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:05:51 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:05:51 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:05:51 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:06:29 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:06:29 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:06:29 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:06:29 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: admin
+2026-08-15 18:06:30 - WARN  [http-nio-8081-exec-1] c.e.l.e.GlobalExceptionHandler - Ошибка аутентификации: Неверные учетные данные пользователя
+2026-08-15 18:06:42 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:06:43 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:06:43 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:06:43 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: admin
+2026-08-15 18:06:43 - WARN  [http-nio-8081-exec-2] c.e.l.e.GlobalExceptionHandler - Ошибка аутентификации: Неверные учетные данные пользователя
+2026-08-15 18:06:48 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:06:48 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:06:48 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:06:48 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: admin
+2026-08-15 18:06:48 - WARN  [http-nio-8081-exec-3] c.e.l.e.GlobalExceptionHandler - Ошибка аутентификации: Неверные учетные данные пользователя
+2026-08-15 18:07:00 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:07:00 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:07:00 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:07:00 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: admin
+2026-08-15 18:07:00 - WARN  [http-nio-8081-exec-4] c.e.l.e.GlobalExceptionHandler - Ошибка аутентификации: Неверные учетные данные пользователя
+2026-08-15 18:11:00 - ERROR [http-nio-8081-exec-6] c.e.l.e.GlobalExceptionHandler - Внутренняя ошибка сервера
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (':' (code 58)): was expecting comma to separate Object entries
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:161)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:135)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.lcmApp.security.UserAuthFilter.doFilterInternal(UserAuthFilter.java:82)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (':' (code 58)): was expecting comma to separate Object entries
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 27]
+	at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2643)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:685)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextFieldName(UTF8StreamJsonParser.java:1021)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:400)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2125)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395)
+	... 104 common frames omitted
+2026-08-15 18:11:41 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:11:41 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:11:41 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:12:08 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:15:31 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:15:44 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 18:15:44 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 18:15:44 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 18:15:54 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 7325 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 18:15:54 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 18:15:54 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 18:15:54 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
+2026-08-15 18:15:55 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 18:15:55 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 18:15:55 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 18:15:55 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 18:15:55 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1343 ms
+2026-08-15 18:15:55 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 18:15:55 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 18:15:55 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 18:15:56 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 18:15:56 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 18:15:56 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@559fd5ec
+2026-08-15 18:15:56 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 18:15:56 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 18:15:57 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 18:15:57 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 18:15:57 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 18:15:57 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 18:15:58 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 18:15:58 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 18:15:58 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 18:15:58 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@472073bb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63714a1, org.springframework.security.web.context.SecurityContextHolderFilter@69eb88a7, org.springframework.security.web.header.HeaderWriterFilter@7aafac17, org.springframework.web.filter.CorsFilter@53bf791, org.springframework.security.web.authentication.logout.LogoutFilter@ce24a98, com.example.lcmApp.security.UserAuthFilter@41831611, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d727123, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b3639a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bc6a43c, org.springframework.security.web.session.SessionManagementFilter@3eff5c32, org.springframework.security.web.access.ExceptionTranslationFilter@13190355, org.springframework.security.web.access.intercept.AuthorizationFilter@25dc8147]
+2026-08-15 18:15:59 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 18:15:59 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.358 seconds (process running for 5.824)
+2026-08-15 18:16:02 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 18:16:02 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 18:16:02 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 18:16:02 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:16:03 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:17:06 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:33:18 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:33:21 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:33:21 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:33:21 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:41:39 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:41:39 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:41:39 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:41:51 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:41:51 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:41:51 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:42:06 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:42:06 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:42:06 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:42:07 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:42:07 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:42:07 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:42:23 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:42:51 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:42:51 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:42:51 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:43:03 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:43:09 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:43:09 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:43:09 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:43:25 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:43:25 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:43:25 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:43:25 - WARN  [http-nio-8081-exec-4] c.e.l.e.GlobalExceptionHandler - Недостаточно товара: Insufficient stock for material: Обезжириватель. Available: 15.0, Requested: 16.0
+2026-08-15 18:44:31 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:44:31 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:44:31 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:44:31 - WARN  [http-nio-8081-exec-7] c.e.l.e.GlobalExceptionHandler - Недостаточно товара: Insufficient stock for material: Обезжириватель. Available: 15.0, Requested: 16.0
+2026-08-15 18:50:52 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 18:50:52 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 18:50:52 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 18:51:04 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 8032 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 18:51:04 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 18:51:05 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 18:51:05 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
+2026-08-15 18:51:06 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 18:51:06 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 18:51:06 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 18:51:06 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 18:51:06 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1682 ms
+2026-08-15 18:51:06 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 18:51:06 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 18:51:06 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 18:51:06 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 18:51:06 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 18:51:07 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@625264ed
+2026-08-15 18:51:07 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 18:51:07 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 18:51:08 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 18:51:08 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 18:51:08 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 18:51:08 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 18:51:09 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 18:51:09 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 18:51:09 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 18:51:09 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@962e03a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@472073bb, org.springframework.security.web.context.SecurityContextHolderFilter@31e08c61, org.springframework.security.web.header.HeaderWriterFilter@1f664881, org.springframework.web.filter.CorsFilter@63714a1, org.springframework.security.web.authentication.logout.LogoutFilter@11a88d87, com.example.lcmApp.security.UserAuthFilter@1c7fd2e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2db15764, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1377af49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53bf791, org.springframework.security.web.session.SessionManagementFilter@81a193b, org.springframework.security.web.access.ExceptionTranslationFilter@260d878a, org.springframework.security.web.access.intercept.AuthorizationFilter@63916a3]
+2026-08-15 18:51:10 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 18:51:10 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 6.333 seconds (process running for 6.815)
+2026-08-15 18:51:10 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 18:51:10 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 18:51:10 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 18:51:10 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:51:10 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:51:10 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:51:11 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:51:11 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:51:11 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:51:11 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:51:11 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:51:11 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:51:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:51:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:51:18 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:51:32 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:51:32 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:51:32 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:51:32 - WARN  [http-nio-8081-exec-5] c.e.l.e.GlobalExceptionHandler - Недостаточно товара: Insufficient stock for material: Обезжириватель. Available: 15.0, Requested: 16.0
+2026-08-15 18:52:16 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:52:16 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:52:16 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:52:16 - WARN  [http-nio-8081-exec-7] c.e.l.e.GlobalExceptionHandler - Недостаточно товара: Insufficient stock for material: Обезжириватель. Available: 15.0, Requested: 16.0
+2026-08-15 18:53:08 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 18:53:08 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 18:53:08 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 18:53:16 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 8169 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 18:53:16 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 18:53:17 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 18:53:17 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 4 JPA repository interfaces.
+2026-08-15 18:53:18 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 18:53:18 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 18:53:18 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 18:53:18 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 18:53:18 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1544 ms
+2026-08-15 18:53:18 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 18:53:18 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 18:53:18 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 18:53:18 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 18:53:19 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 18:53:19 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@559fd5ec
+2026-08-15 18:53:19 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 18:53:19 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 18:53:20 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 18:53:20 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 18:53:20 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 18:53:20 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 18:53:21 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 18:53:21 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 18:53:21 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 18:53:21 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@472073bb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63714a1, org.springframework.security.web.context.SecurityContextHolderFilter@69eb88a7, org.springframework.security.web.header.HeaderWriterFilter@7aafac17, org.springframework.web.filter.CorsFilter@53bf791, org.springframework.security.web.authentication.logout.LogoutFilter@ce24a98, com.example.lcmApp.security.UserAuthFilter@41831611, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d727123, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b3639a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bc6a43c, org.springframework.security.web.session.SessionManagementFilter@3eff5c32, org.springframework.security.web.access.ExceptionTranslationFilter@13190355, org.springframework.security.web.access.intercept.AuthorizationFilter@25dc8147]
+2026-08-15 18:53:21 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 18:53:21 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.738 seconds (process running for 6.183)
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:53:25 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:53:44 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:53:44 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:53:44 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:53:56 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 18:53:56 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 18:53:56 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 18:53:56 - WARN  [http-nio-8081-exec-5] c.e.l.e.GlobalExceptionHandler - Недостаточно товара: Insufficient stock for material: Обезжириватель. Available: 15.0, Requested: 16.0
+2026-08-15 19:06:33 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:06:33 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 19:06:33 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 19:06:44 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 8504 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 19:06:44 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 19:06:45 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 19:06:45 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 4 JPA repository interfaces.
+2026-08-15 19:06:45 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 19:06:45 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 19:06:45 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 19:06:45 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 19:06:45 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1338 ms
+2026-08-15 19:06:46 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 19:06:46 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 19:06:46 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 19:06:46 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 19:06:46 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 19:06:46 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3739f3c9
+2026-08-15 19:06:46 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 19:06:46 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 19:06:47 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 19:06:47 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 19:06:47 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:06:48 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 19:06:48 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 19:06:48 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 19:06:48 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 19:06:48 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3bced0d2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@158774d3, org.springframework.security.web.context.SecurityContextHolderFilter@34e785db, org.springframework.security.web.header.HeaderWriterFilter@5ffae42f, org.springframework.web.filter.CorsFilter@37905236, org.springframework.security.web.authentication.logout.LogoutFilter@26db7540, com.example.lcmApp.security.UserAuthFilter@5570ee6d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59294447, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e9d5d79, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4fdb338e, org.springframework.security.web.session.SessionManagementFilter@48446968, org.springframework.security.web.access.ExceptionTranslationFilter@414b5798, org.springframework.security.web.access.intercept.AuthorizationFilter@1bc6a43c]
+2026-08-15 19:06:49 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 19:06:49 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.175 seconds (process running for 5.665)
+2026-08-15 19:08:50 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 19:08:50 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 19:08:50 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:08:51 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:08:51 - ERROR [http-nio-8081-exec-4] c.e.l.e.GlobalExceptionHandler - Внутренняя ошибка сервера
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.lcmApp.security.UserAuthFilter.doFilterInternal(UserAuthFilter.java:82)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-08-15 19:08:55 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:08:55 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:08:55 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:09:08 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:09:08 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:09:08 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:09:09 - WARN  [http-nio-8081-exec-7] c.e.l.e.GlobalExceptionHandler - Недостаточно товара: Не достаточно материала на складе: Обезжириватель. требуеться: 15.0, имееться: 16.0
+2026-08-15 19:10:30 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:10:30 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 19:10:30 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 19:10:40 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 8738 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 19:10:40 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 19:10:41 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 19:10:41 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
+2026-08-15 19:10:42 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 19:10:42 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 19:10:42 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 19:10:42 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 19:10:42 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1375 ms
+2026-08-15 19:10:42 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 19:10:42 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 19:10:42 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 19:10:42 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 19:10:42 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 19:10:43 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@625264ed
+2026-08-15 19:10:43 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 19:10:43 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 19:10:43 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 19:10:44 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 19:10:44 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:10:44 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 19:10:45 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 19:10:45 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 19:10:45 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 19:10:45 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@962e03a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@472073bb, org.springframework.security.web.context.SecurityContextHolderFilter@31e08c61, org.springframework.security.web.header.HeaderWriterFilter@1f664881, org.springframework.web.filter.CorsFilter@63714a1, org.springframework.security.web.authentication.logout.LogoutFilter@11a88d87, com.example.lcmApp.security.UserAuthFilter@1c7fd2e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2db15764, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1377af49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53bf791, org.springframework.security.web.session.SessionManagementFilter@81a193b, org.springframework.security.web.access.ExceptionTranslationFilter@260d878a, org.springframework.security.web.access.intercept.AuthorizationFilter@63916a3]
+2026-08-15 19:10:45 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 19:10:45 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.228 seconds (process running for 5.529)
+2026-08-15 19:10:58 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 19:10:58 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 19:10:58 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 19:10:58 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:10:58 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:10:58 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:10:59 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:10:59 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:10:59 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:10:59 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:10:59 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:10:59 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:11:02 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:11:02 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:11:02 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:11:15 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:11:15 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:11:15 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:11:15 - WARN  [http-nio-8081-exec-5] c.e.l.e.GlobalExceptionHandler - Недостаточно товара: Не достаточно материала на складе: Обезжириватель. имееться: 15.0, требуеться: 16.0
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Рома
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Рома, rolesList size=1
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='USER' -> полномочие 'ROLE_USER'
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-8] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-9] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:35 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:13:47 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:47 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:47 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:13:48 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:13:48 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:13:48 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:19:36 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:19:36 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 19:19:36 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 19:19:45 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 8961 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 19:19:45 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 19:19:46 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 19:19:46 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
+2026-08-15 19:19:46 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 19:19:46 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 19:19:46 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 19:19:46 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 19:19:46 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1307 ms
+2026-08-15 19:19:47 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 19:19:47 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 19:19:47 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 19:19:47 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 19:19:47 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 19:19:47 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2bf3ec4
+2026-08-15 19:19:47 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 19:19:47 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 19:19:48 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 19:19:48 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 19:19:48 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:19:49 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 19:19:49 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 19:19:49 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 19:19:49 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 19:19:50 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4dcdc172, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7900d917, org.springframework.security.web.context.SecurityContextHolderFilter@69abff1d, org.springframework.security.web.header.HeaderWriterFilter@51f714d1, org.springframework.web.filter.CorsFilter@7bb50de0, org.springframework.security.web.authentication.logout.LogoutFilter@6725f9e0, com.example.lcmApp.security.UserAuthFilter@4379fe2a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15cba6dc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48446968, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63916a3, org.springframework.security.web.session.SessionManagementFilter@6d9069ab, org.springframework.security.web.access.ExceptionTranslationFilter@7bb3cbb4, org.springframework.security.web.access.intercept.AuthorizationFilter@523cc8b4]
+2026-08-15 19:19:50 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 19:19:50 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.455 seconds (process running for 5.754)
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:19:54 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:21:04 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:21:04 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:21:04 - INFO  [http-nio-8081-exec-10] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:21:05 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:21:05 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:21:05 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:42:58 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:42:58 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:42:58 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:43:17 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:43:17 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:43:17 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:47:44 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:47:44 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 19:47:44 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 19:47:56 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 9481 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 19:47:56 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 19:47:56 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 19:47:56 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
+2026-08-15 19:47:57 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 19:47:57 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 19:47:57 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 19:47:57 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 19:47:57 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1337 ms
+2026-08-15 19:47:57 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 19:47:57 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 19:47:57 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 19:47:58 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 19:47:58 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 19:47:58 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6c6379c
+2026-08-15 19:47:58 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 19:47:58 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 19:47:59 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 19:47:59 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 19:47:59 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 19:47:59 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 19:48:00 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 19:48:00 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 19:48:00 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 19:48:00 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@63916a3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25dc8147, org.springframework.security.web.context.SecurityContextHolderFilter@81a193b, org.springframework.security.web.header.HeaderWriterFilter@4f355321, org.springframework.web.filter.CorsFilter@5aeb2c8a, org.springframework.security.web.authentication.logout.LogoutFilter@2b46d238, com.example.lcmApp.security.UserAuthFilter@7095b688, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79d538c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34e785db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@962e03a, org.springframework.security.web.session.SessionManagementFilter@69abff1d, org.springframework.security.web.access.ExceptionTranslationFilter@77e8492f, org.springframework.security.web.access.intercept.AuthorizationFilter@4dcdc172]
+2026-08-15 19:48:00 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 19:48:00 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.241 seconds (process running for 5.586)
+2026-08-15 19:48:05 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 19:48:05 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 19:48:05 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 19:48:05 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:48:05 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:48:05 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:48:05 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:48:06 - ERROR [http-nio-8081-exec-3] c.e.l.e.GlobalExceptionHandler - Внутренняя ошибка сервера
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.lcmApp.security.UserAuthFilter.doFilterInternal(UserAuthFilter.java:82)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
