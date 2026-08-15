@@ -893,3 +893,154 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-5] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
 2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
 2026-08-15 19:48:06 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 20:25:05 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 20:25:05 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 20:25:05 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-15 20:26:43 - INFO  [main] com.example.lcmApp.LcmApp - Starting LcmApp using Java 17.0.19 with PID 12673 (/home/petya/ДР-LcmApp/lcmApp/target/classes started by petya in /home/petya/ДР-LcmApp/lcmApp)
+2026-08-15 20:26:43 - INFO  [main] com.example.lcmApp.LcmApp - No active profile set, falling back to 1 default profile: "default"
+2026-08-15 20:26:44 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-15 20:26:44 - INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
+2026-08-15 20:26:45 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-08-15 20:26:45 - INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-08-15 20:26:45 - INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-08-15 20:26:45 - INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-08-15 20:26:45 - INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1409 ms
+2026-08-15 20:26:45 - INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-15 20:26:45 - INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-08-15 20:26:45 - INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-08-15 20:26:45 - INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-15 20:26:45 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-08-15 20:26:46 - INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@625264ed
+2026-08-15 20:26:46 - INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-08-15 20:26:46 - WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-15 20:26:47 - INFO  [main] o.h.m.i.EntityInstantiatorPojoStandard - HHH000182: No default (no-argument) constructor for class: com.example.lcmApp.entity.LcmIssue (class must be instantiated by Interceptor)
+2026-08-15 20:26:47 - INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-15 20:26:47 - INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 20:26:47 - INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-15 20:26:48 - INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-08-15 20:26:48 - WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-15 20:26:48 - INFO  [main] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-08-15 20:26:48 - INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@962e03a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@472073bb, org.springframework.security.web.context.SecurityContextHolderFilter@31e08c61, org.springframework.security.web.header.HeaderWriterFilter@1f664881, org.springframework.web.filter.CorsFilter@63714a1, org.springframework.security.web.authentication.logout.LogoutFilter@11a88d87, com.example.lcmApp.security.UserAuthFilter@1c7fd2e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2db15764, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1377af49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53bf791, org.springframework.security.web.session.SessionManagementFilter@81a193b, org.springframework.security.web.access.ExceptionTranslationFilter@260d878a, org.springframework.security.web.access.intercept.AuthorizationFilter@63916a3]
+2026-08-15 20:26:48 - INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-08-15 20:26:48 - INFO  [main] com.example.lcmApp.LcmApp - Started LcmApp in 5.39 seconds (process running for 5.794)
+2026-08-15 20:26:59 - INFO  [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-15 20:26:59 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-08-15 20:26:59 - INFO  [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-1] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-2] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 20:27:00 - ERROR [http-nio-8081-exec-2] c.e.l.e.GlobalExceptionHandler - Внутренняя ошибка сервера
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.example.lcmApp.security.UserAuthFilter.doFilterInternal(UserAuthFilter.java:82)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ЗАПРОС НА АВТОРИЗАЦИЮ: ищем пользователя с именем: Андрей
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-6] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-4] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-7] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ПОЛЬЗОВАТЕЛЬ НАЙДЕН: fullName=Андрей, rolesList size=1
+2026-08-15 20:27:00 - INFO  [http-nio-8081-exec-3] c.e.l.s.CustomUserDetailsService - >>> ОБРАБОТКА РОЛИ: name='ADMIN' -> полномочие 'ROLE_ADMIN'
+2026-08-15 20:27:09 - INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-15 20:27:09 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-08-15 20:27:09 - INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
